@@ -1,8 +1,6 @@
 
 import './App.css';
-import {Header} from './Components/Header/header';
 
-import { Subheader } from './Components/Subheader/subheader';
 import { Lisitems } from './Components/ListItems/ListItems';
 
 
@@ -91,8 +89,7 @@ function App() {
   return (
    
     <div className="App">
-      <Header/>
-      <Subheader/>
+    
       
       <div className="list">
         {items.map((item) => (

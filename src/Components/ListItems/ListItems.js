@@ -1,8 +1,11 @@
 
 import { useState } from 'react';
 import cartitem from '../../assets/cart.png';
-
+import { Header } from '../Header/header';
+import { Subheader } from '../Subheader/subheader';
 import     './ListItems.css';
+
+  
 export const Lisitems =({data})=>{
 
     const [isAdded, setIsAdded] = useState(false);
@@ -25,6 +28,10 @@ const increaseCounterByOne = () => {
 
     return (
         <>
+          <header>
+        <div>  <Header/></div>
+          <Subheader/>
+          </header>
         <div className='card'>
              <div className='img-card'> 
                 <img  className='img' src ={`/assets/${data.thumbnail}`} alt='watch'/>
