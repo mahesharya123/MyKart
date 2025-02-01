@@ -1,11 +1,12 @@
 import './header.css';
 
 export const Header =()=>{
+   
 return(
     <>
      <header className='header'>
         <div className="nav-brand">
-            <a href='#'>
+            <a href='/'>
                 <span>MyKart</span>
                 <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-shopping-cart" width="30"
                     height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" fill="none" stroke-linecap="round"
@@ -21,8 +22,8 @@ return(
         <div className="searchBox-container">
             <form>
                 <input name="search" type="text"
-                    id="search" placeholder="Enter product name, category" />
-                <button type="submit">
+                    id="search" placeholder="Enter product name, category"/>
+                <button type="submit" >
                     <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-search" width="20"
                         height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" fill="none"
                         stroke-linecap="round" stroke-linejoin="round">
