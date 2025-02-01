@@ -1,6 +1,6 @@
 import './header.css';
 
-export const Header =({data})=>{
+export const Header =()=>{
    
 return(
     <>
