@@ -3,6 +3,7 @@
     width: 203px;
     height:311px;
     box-sizing: border-box;
+    margin: 30px;
     
     border-radius: 4px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
@@ -50,16 +51,15 @@
 
 }
 .adcart{
-    border: none;
+    border-radius:4px;
     outline: none;
-    background-color: rgb(249, 132, 90);
+    width: 13vw;
+    background-color: white;
     cursor: pointer;
-    color: aliceblue;
+    color: black;
     font-size: medium;
 }
-.adcart:hover{
-    background-color: wheat;
-}
+
 
 .img-btn{
     border: none;
@@ -106,10 +106,32 @@ button.cart-add {
         border: unset;
         font-size: 14px;
         padding: 8px 12px;
-        color: white;
+        color:white;
     }
     span.counter {
         font-weight: lighter;
         padding: 0 16px;
     }
+}
+.modal-pop{
+    display: flex;
+   flex-direction: row;
+   
+}
+.img-wrap{
+    width: 90%;
+    height: 70%;
+}
+.disc
+{  width: 55%;
+ height: 50%;}
+
+.img-fluid{
+    width: 70%;
+    height: 60%;
+}
+.meta{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
