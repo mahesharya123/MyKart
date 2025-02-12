@@ -1,11 +1,13 @@
 
 .header{
+
     display:flex;
     flex-direction: row;
     justify-content: space-between;
 }
 @import url("https://fonts.googleapis.com/css2?family=Doppio+One&display=swap");
 header {
+  
   margin: 0;
   padding: 0 0px;
   background-color: rgba(28, 34, 36, 0.8);
@@ -19,6 +21,7 @@ header {
 .nav-brand a, .nav-brand button,
 .cart-container a,
 .cart-container button {
+ 
   display: flex;
   align-items: center;
   padding: 12px 32px;
@@ -117,7 +120,7 @@ html {
 body {
   line-height: 1.5;
   margin: 0;
-  position: relative; }
+  position: fixed; }
 
 .img-fluid {
   max-width: 100%;

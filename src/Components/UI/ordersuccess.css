@@ -1,0 +1,31 @@
+order-container {
+    display: flex;
+    align-content: center;
+    vertical-align: middle;
+    min-height: 350px;
+}
+   .order-container--success {
+        margin: auto;
+        text-align: center;
+
+        
+        
+    }
+
+.img-fluid {
+    max-width: 300px;
+    max-height: 300px;
+}
+
+.message {
+    h1 {
+        margin: 0;
+    }
+    h1, span {
+        margin-top: 8px;
+    }
+    span {
+        color: rgba(0, 0, 0, 0.5);
+
+    }
+}
