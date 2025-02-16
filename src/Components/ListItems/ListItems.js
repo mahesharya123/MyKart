@@ -28,7 +28,6 @@ const descreaseCounterByOne = (event) => {
 
 const increaseCounterByOne = event => {
 
-    console.log("Updated item:", item);
     event.stopPropagation();
     dispatch({
         type:'ADD_ITEM',

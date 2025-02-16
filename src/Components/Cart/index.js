@@ -18,6 +18,7 @@ export const  Cart =()=>{
   const handleOrderModal = ()=>{
     setOrdermodal(prevState=>!prevState);
     setshowModal(false);
+    
     dispatch({
         type:'CLEAR_CART'
     })

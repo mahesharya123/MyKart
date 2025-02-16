@@ -19,7 +19,7 @@ const mainReducer = (state = { items: [], totalAmount: 0 }, action) => {
                 });
             }
 
-            const totalAmount = state.totalAmount + payload.discountedprice; // Fix payload reference
+            const totalAmount = state.totalAmount + payload.item.discountedprice; // Fix payload reference
             return {
                 ...state,
                 items: items,
