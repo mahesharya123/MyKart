@@ -20,12 +20,12 @@ function App() {
  
   useEffect(()=>{
     //fetch('https://react-js-d70fc-default-rtdb.firebaseio.com/items.json').then(response=>response.json()).then(data=>{console.log(data)})
-    axios.get('https://react-js-d70fc-default-rtdb.firebaseio.com/items.json').then(response=>{
+    axios.get('https://react-js-d70fc-default-rtdb.firebaseio.com//items.json').then(response=>{
       const data = response.data;
       const transformedata = data.map((item,index)=>{
         return {
         ...item,
-        quantity:0,
+       
         id:index
         }
       })

@@ -3,23 +3,47 @@ import { Modal } from "../UI/Modal"
 import {Kartitems} from'./Kartitems'
 import './cart.css'
 import OrderSuccessModal from "../UI/ordersuccess"
+import { useDispatch, useSelector } from "react-redux"
 
 
-export const  Cart =({count,items,onHandleEvent})=>{
+export const  Cart =()=>{
   const[showModal,setshowModal]= useState(false);
   const [ordermodal,setOrdermodal] = useState(false);
+  const items = useSelector(state=>state.items);
+  const totalAmount = useSelector(state=>state.totalAmount);
+  const dispatch = useDispatch();
  const handleModal =()=>{
     setshowModal(prevState=>!prevState);
  }
   const handleOrderModal = ()=>{
     setOrdermodal(prevState=>!prevState);
     setshowModal(false);
+    dispatch({
+        type:'CLEAR_CART'
+    })
+  }
+  const dispatchEvent =(type,item)=>{
+    if(type === 1){
+        dispatch({
+            type:'ADD_ITEM',
+            payload:{item:item}
+        })
+    }
+    else if(type===-1){
+        dispatch({
+            type:'REMOVE_ITEM',
+            payload:{
+                id: item.id
+            }
+
+        })
+    }
   }
     return(
         <Fragment>
 
            <button onClick={handleModal}>
-                <span data-items= {count} >Cart</span>
+                <span data-items= {items.length} >Cart</span>
                 <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-shopping-cart-plus" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                     <circle cx="6" cy="19" r="2" />
@@ -35,25 +59,23 @@ export const  Cart =({count,items,onHandleEvent})=>{
                         <h2>Checkout Modal</h2>
                         <div className="checkout-modal_list">
                             {
-                                count > 0 ?
+                                items.length > 0 ?
                                 items.map(
                                     item=>{return( <Kartitems data={item} 
                                         key={item.id} 
-                                        onEmitIncreaseitem={id=>onHandleEvent(id,1)}
-                                     onEmitDecreaseitem={id=>onHandleEvent(id,-1)}/>)})
+                                        onEmitIncreaseitem={id=>dispatchEvent(1,item)}
+                                     onEmitDecreaseitem={item=>dispatchEvent(-1,item)}/>)})
                                  :
                                 <div className="empty-cart">Please add something in your cart!</div>
                             }
                         </div>
                         { 
-                            count > 0 &&
+                            items.length > 0 &&
                             <div className="checkout-modal_footer">
                                 <div className="totalAmount">
                                     <h4>Total Amount: </h4>
                                     <h4>{
-                                        items.reduce((previous, current)=>{
-                                            return (previous + (current.discountedprice.replace(/[^0-9.]/g, "") * current.quantity));
-                                        },0)
+                                       totalAmount
                                         } INR</h4>
                                 </div>
                                 <button className="buttn" onClick={handleOrderModal}>Order Now</button>
