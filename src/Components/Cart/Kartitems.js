@@ -17,9 +17,9 @@ export const Kartitems=({data, onEmitDecreaseitem, onEmitIncreaseitem})=>{
                                             </div>
                                         </div>
                                         <div className="cart-addon cart-addon__modal">
-                                            <button onClick={()=>{onEmitDecreaseitem(data.id)}}>-</button>
+                                            <button onClick={()=>{onEmitDecreaseitem(data)}}>-</button>
                                             <span className="counter">{data.quantity}</span>
-                                            <button onClick={()=>{onEmitIncreaseitem(data.id)}}>+</button>
+                                            <button onClick={()=>{onEmitIncreaseitem(data)}}>+</button>
                                         </div>
                                     </div>
                                 </div>
