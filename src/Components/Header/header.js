@@ -33,6 +33,7 @@ return(
                     </svg>
                 </button>
             </form>
+
             <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-search" width="20"
                 height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" fill="none" stroke-linecap="round"
                 stroke-linejoin="round">
@@ -41,6 +42,7 @@ return(
                 <line x1="21" y1="21" x2="15" y2="15" />
             </svg>
         </div>
+       <button className="login-btn" >Login</button>
         <div className="cart-container">
            <Cart count={count} items={items} onHandleEvent={onHandleEvent} />
         </div>
