@@ -1,3 +1,6 @@
+import { combineReducers } from "@reduxjs/toolkit";
+import authReducer from './auth.js'
+
 const mainReducer = (state = { items: [], totalAmount: 0 }, action) => {
     const { type, payload } = action;
 
@@ -63,4 +66,8 @@ const mainReducer = (state = { items: [], totalAmount: 0 }, action) => {
     }
 };
 
-export default mainReducer;
+export default combineReducers({
+    cart: mainReducer,
+    auth: authReducer
+
+});

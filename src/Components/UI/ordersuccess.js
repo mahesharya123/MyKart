@@ -2,7 +2,7 @@ import{ Modal} from './Modal'
 import './ordersuccess.css';
 import OrderSuccessImage from "../../assets/3544858.jpg"
 
-const OrderSuccessModal = ({ onClose }) => {
+const OrderSuccessModal = ({ onClose,orderId }) => {
     return (
         <Modal onClose={onClose}>
             <div className="order-container">
@@ -10,7 +10,7 @@ const OrderSuccessModal = ({ onClose }) => {
                     <img src={OrderSuccessImage} alt="Success" className="img-fluid"/>
                     <div className="message">
                         <h1>Order Successfully Placed!</h1>
-                        <span>OrderID #{Math.random().toString(32).slice(2)}</span>
+                        <span>OrderID #{orderId}</span>
                     </div>
                 </div>
             </div>

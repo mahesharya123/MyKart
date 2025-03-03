@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Doppio+One&family=Roboto:wght@300;400&display=swap');
 .header{
 
     display:flex;
@@ -6,6 +6,7 @@
     justify-content: space-between;
 }
 @import url("https://fonts.googleapis.com/css2?family=Doppio+One&display=swap");
+
 header {
   
   margin: 0;
@@ -138,73 +139,34 @@ body {
     margin-right: 12px;
     align-self: center;
 }
+.logo{
+  height: 50px;
+  width: 55px;
+  border-radius: 50%;
+}
 
-.auth-container {
-    min-height: calc(100vh - 140px);
-    display: flex;
-    align-items: center;
-    margin-top: -100px;
-    width: 100%;
-    justify-content: center;
 
-    &--box {
-        padding: 24px 32px;
-        text-align: center;
-        box-shadow: 0 .5em 1em -.125em rgba(10,10,10,.1),0 0 0 1px rgba(10,10,10,.02);
-        min-width: 350px;
-        max-width: 100%;
-
-        .tab-selector {
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            margin-bottom: 20px;
-
-            h3 {
-                margin: 0;
-            }
-            a {
-                flex-grow: 1;
-                display: inline-block;
-                padding-bottom: 0;
-                background-color: white;
-                padding: 8px;
-                text-decoration: none;
-                &:visited {
-                    color: black;
-                }
-
-                &.active {
-                    color: white;
-                    border-radius: 4px;
-                    background-color: #e96125;
-                }
-            }
-        }
-
-        form {
-            text-align: left;
-            .input-wrap {
-                display: flex;
-                flex-direction: column;
-                width: 100%;
-                margin-bottom: 16px;
-                label {
-                    margin-bottom: 4px;
-                }
-                input {
-                    padding: 8px 14px;
-                }
-            }
-
-            .button-wrap {
-                padding-top: 12px;
-                display: flex;
-                justify-content: flex-end;
-                button {
-                    margin-right: 0;
-                }
-            }
-        }
-    }
+.user-action{
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  button {
+    color: white;
+    background-color: unset;
+    border: unset;
+    margin: 0 10px;
+    cursor: pointer;
+}
+}
+.circle {
+  width: 60px;
+  height: 60px;
+  background-color: #e96125;
+  border-radius: 50%;
+  border: none;
+  color: aliceblue;
+  margin-top: 5px;
+ text-align: center;
+ font-size: .5rem;
+  
 }

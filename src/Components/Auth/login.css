@@ -1,0 +1,76 @@
+
+.auth-container {
+    min-height: calc(100vh - 140px);
+    display: flex;
+    align-items: center;
+    margin-top: -100px;
+    width: 100%;
+    justify-content: center;
+
+  
+        .tab-selector {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+            h3 {
+                margin: 0;
+            }
+            a {
+                flex-grow: 1;
+                display: inline-block;
+                padding-bottom: 0;
+                background-color: white;
+                padding: 8px;
+                text-decoration: none;
+                &:visited {
+                    color: black;
+                }
+
+                &.active {
+                    color: white;
+                    border-radius: 4px;
+                    background-color: #e96125;
+                }
+            }
+        }
+
+        form {
+            text-align: left;
+            
+
+           
+        
+    }
+    .input-wrap {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 16px;
+        label {
+            margin-bottom: 4px;
+        }
+        input {
+            padding: 8px 14px;
+        }
+    }
+    .button-wrap {
+        padding-top: 12px;
+        display: flex;
+        justify-content: flex-end;
+       
+    }
+    button {
+        margin-right: 0;
+    }
+
+    .auth-container-box {
+        padding: 24px 32px;
+        text-align: center;
+        
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+        background: linear-gradient(145deg, #ffffff, #e6e6e6); 
+        min-width: 350px;
+        max-width: 100%;
+    }
