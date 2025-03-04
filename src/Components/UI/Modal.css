@@ -1,47 +1,68 @@
+/* Existing modal styling */
 .modal {
-    position: fixed;
-    top: 20vh;
-    left: 25%;
-    width: 50%;
-    
-    background-color: white;
-    padding: 1rem;
-    border-radius: 2px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-    z-index: 9999;
-   
-    
-    
-   
-   
-
-   
-}
-.bttn{
-  display: inline;
- 
-  margin-left: 95%;
-    
-
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 500px;
+  max-height: 80vh;
+  overflow-y: auto;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  z-index: 9999;
+  animation: slide-down 0.3s ease-out;
 }
 
+/* Close Button Styling */
+.bttn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+}
 
-@media (min-width: 768px) {
-  .modal {
-      width: 40rem;
-      left: calc(50% - 20rem);
-      scrollbar-width: 200px;
+.bttn:hover {
+  color: red;
+}
+
+/* Default layout for image and paragraph (stacked vertically) */
+.modal-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem; /* Space between image and paragraph */
+}
+
+/* Responsive adjustment: when modal width is less than 400px, show content in a row */
+@media (max-width: 400px) {
+  .modal-content-wrapper {
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+  }
+  
+  /* Optionally, adjust image size to better fit in a row layout */
+  .modal-image {
+      max-width: 40%;
+      height: auto;
   }
 }
 
+/* Animation */
 @keyframes slide-down {
   from {
       opacity: 0;
-      transform: translateY(-2rem);
+      transform: translate(-50%, -60%);
   }
-
   to {
       opacity: 1;
-      transform: translateY(0);
+      transform: translate(-50%, -50%);
   }
 }

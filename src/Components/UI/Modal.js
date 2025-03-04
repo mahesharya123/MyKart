@@ -1,21 +1,19 @@
-import ReactDom from 'react-dom'
-import { Fragment } from 'react'
-import './Modal.css'
-import { Backdrop } from './loader';
-export const Modal=({onClose,children})=>{
-    return(
-      ReactDom.createPortal(
-        <Fragment> 
-        <Backdrop onClose={onClose}/>
-        <div className='modal'>
-        <button type='close'className='bttn' onClick={onClose}>X</button>
-          <div className='content'>
-           {children}
-          </div>
-      
-        </div>
+import ReactDOM from "react-dom";
+import { Fragment } from "react";
+import "./Modal.css";
+import { Backdrop } from "./loader";
+
+export const Modal = ({ onClose, children }) => {
+  return ReactDOM.createPortal(
+    <Fragment>
+      <Backdrop onClose={onClose} />
+      <div className="modal">
+        <button type="button" className="bttn" onClick={onClose}>
+          &times;
+        </button>
+        <div className="content">{children}</div>
+      </div>
     </Fragment>,
-    document.getElementById('modal-root')
-      )
-    )
-}
+    document.getElementById("modal-root")
+  );
+};
