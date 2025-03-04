@@ -10,6 +10,7 @@ import { Loader } from './Components/UI/loader';
 import { Routes,Route,Navigate } from 'react-router-dom';
 import { checkIsLoggedIn } from './actions/auth';
 import { useDispatch, useSelector } from 'react-redux';
+import { Footer } from './Components/Footer/Footer';
 
 
 
@@ -95,6 +96,7 @@ function App() {
         />
        <Route path="*" element={<Navigate to="/404" />} />
       </Routes>
+      <Footer/>
       </div>
       
 </>
