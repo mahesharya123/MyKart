@@ -13,7 +13,7 @@ export const Listitems =({data })=>{
 //const [counter, setCounter] = useState(0);
 const [showModal,setshowModal] =useState(false);
 
-const item = useSelector(state => state.items.find(item => item.id === data.id));
+const item = useSelector(state => state.cart.items.find(item => item.id === data.id));
 
 const dispatch = useDispatch();
 const descreaseCounterByOne = (event) => {
@@ -49,9 +49,9 @@ const increaseCounterByOne = event => {
                 
              </div>
               <div className='price'>
-                <span>{data.discountedprice}</span>
+                <span>₹{data.discountedprice}</span>
                 <small>
-                    <strike>{data.price}</strike>
+                    <strike>₹{data.price}</strike>
                 </small>
                 <div className='title'>
                     <span>{data.title} </span>
@@ -85,10 +85,10 @@ const increaseCounterByOne = event => {
                             <div className='p-t'>
                             <h3>{data.title}</h3>
                             <div className="price">
-                               <b><span>{data.discountedprice}</span></b> 
+                               <b><span> ₹{data.discountedprice}</span></b> 
 
                                 <sup>
-                                   <i><strike>{data.price}</strike></i> 
+                                   <i><strike>₹{data.price}</strike></i> 
                                 </sup>
                                
                             </div>

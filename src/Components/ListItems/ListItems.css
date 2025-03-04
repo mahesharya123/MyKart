@@ -1,74 +1,70 @@
-
-.card{
+/* Base Styles */
+.card {
     width: 203px;
-    height:311px;
+    height: 311px;
     box-sizing: border-box;
     margin: 30px;
-    
     border-radius: 4px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
     gap: 20px;
-    background: linear-gradient(145deg, #ffffff, #e6e6e6); 
-
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
 }
-.img-card{
+
+.img-card {
     width: 200px;
     height: 200px;
 }
-.img{
+
+.img {
    width: 100%;
    height: 100%;
    background: linear-gradient(145deg, #ffffff, #e6e6e6);
 }
-.price{
+
+.price {
     margin-top: 8px;
 }
 
-.btn{
+.btn {
     margin-top: auto;
     cursor: pointer;
     width: 100%;
-   height: auto;
+    height: auto;
     background-color: rgb(249, 132, 90);
     border-radius: 0px 0px 4px 4px;
-   
     font-size: 14px;
     padding: 6px 15px;
     border: unset;
     color: white;
     display: flex;
     align-items: center;
-    
     justify-content: space-between;
 }
 
-.cart{
+.cart {
     width: 36px;
     height: 35px;
 }
-.adcart{
-    cursor: pointer;
 
-}
-.adcart{
-    border-radius:4px;
+/* Combined .adcart styles */
+.adcart {
+    cursor: pointer;
+    border-radius: 4px;
     outline: none;
     width: 13vw;
     background-color: white;
-    cursor: pointer;
     color: black;
     font-size: medium;
 }
 
-
-.img-btn{
+.img-btn {
     border: none;
     outline: none;
     background-color: rgb(249, 132, 90);
     cursor: pointer;
-    
 }
-.img-btn:hover{
+
+.img-btn:hover {
     background-color: azure;
 }
 
@@ -76,7 +72,7 @@ button.cart-add {
     margin-top: auto;
     cursor: pointer;
     width: 100%;
-    background-color: rgb(249, 132, 90) ;
+    background-color: rgb(249, 132, 90);
     border-radius: 0px 0px 4px 4px;
     border: unset;
     font-size: 14px;
@@ -84,54 +80,143 @@ button.cart-add {
     color: white;
     display: flex;
     align-items: center;
-    width: 100%;
     height: 8vh;
     justify-content: space-between;
 }
 
 .cart-addon {
     margin-top: 15px;
-   
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    &__modal {
-        margin-top: 8px;
-    }
-  
-    button {
-        cursor: pointer;
-        background-color:  rgb(237, 97, 46);
-        border-radius: 4px;
-        border: unset;
-        font-size: 14px;
-        padding: 8px 12px;
-        color:white;
-    }
-    span.counter {
-        font-weight: lighter;
-        padding: 0 16px;
-    }
 }
-.modal-pop{
+
+.cart-addon__modal {
+    margin-top: 8px;
+}
+
+.cart-addon button {
+    cursor: pointer;
+    background-color: rgb(237, 97, 46);
+    border-radius: 4px;
+    border: unset;
+    font-size: 14px;
+    padding: 8px 12px;
+    color: white;
+}
+
+.cart-addon span.counter {
+    font-weight: lighter;
+    padding: 0 16px;
+}
+
+.modal-pop {
     display: flex;
-   flex-direction: row;
-   
+    flex-direction: row;
 }
-.img-wrap{
+
+.img-wrap {
     width: 90%;
     height: 70%;
 }
-.disc
-{  width: 55%;
- height: 50%;}
 
-.img-fluid{
+.disc {
+    width: 55%;
+    height: 50%;
+}
+
+.img-fluid {
     width: 70%;
     height: 60%;
 }
-.meta{
+
+.meta {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+}
+
+/* Responsive Adjustments */
+
+/* For screens up to 600px */
+@media (max-width: 600px) {
+    .card {
+        width: 90%;           /* Use relative width */
+        margin: 15px auto;     /* Center and reduce margin */
+        height: auto;         /* Let content determine height */
+    }
+    .img-card {
+        width: 100%;
+        height: auto;
+    }
+    .btn {
+        font-size: 12px;
+        padding: 4px 10px;
+    }
+    .adcart {
+        width: 30vw;
+        font-size: 12px;
+    }
+    /* If you need to adjust the modal-pop layout here, you can set flex-direction to column */
+    /* .modal-pop {
+        flex-direction: column;
+    } */
+}
+
+/* For screens up to 400px */
+@media (max-width: 400px) {
+    .card {
+        width: 95%;          /* Almost full width on very small screens */
+        margin: 10px auto;
+    }
+    .img-card {
+        width: 100%;
+        height: auto;
+    }
+    .btn {
+        font-size: 10px;
+        padding: 3px 8px;
+    }
+    .adcart {
+        width: 40vw;         /* Adjust width as needed */
+        font-size: 10px;
+    }
+    /* Adjusting layout for content that should be row-wise when modal is narrow */
+    .modal-pop {
+        flex-direction: row;
+    }
+    /* If .modal-pop contains two elements like an image and a paragraph,
+       we can split the space equally */
+    .img-wrap,
+    .disc {
+        width: 50%;
+        height: auto;
+    }
+    /* Optionally adjust .meta layout if needed */
+    .meta {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+@media (max-width: 400px) {
+    .modal-pop {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    /* Adjust widths for the child elements */
+    .img-wrap,
+    .disc {
+        width: 48%;  /* Adjust percentages as needed */
+    }
+    .img-wrap {
+        /* Ensure the image fits inside the container */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .img-fluid {
+        width: 100%;
+        height: auto;
+    }
 }

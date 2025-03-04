@@ -21,7 +21,7 @@
       font-size: 14px;
       transition: background 100ms ease-in-out;
       white-space: nowrap; }
-      .subheader-container ul li a.active, .subheader-container ul li a:hover {
+       .nav.active:hover {
         background-color: #e96125;
         color: white; }
 

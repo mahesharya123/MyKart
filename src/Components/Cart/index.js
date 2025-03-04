@@ -4,13 +4,15 @@ import {Kartitems} from'./Kartitems'
 import './cart.css'
 import OrderSuccessModal from "../UI/ordersuccess"
 import { useDispatch, useSelector } from "react-redux"
+import { placeOrderHandler, addItemHandler,removeItemHandler } from "../../actions"
 
 
 export const  Cart =()=>{
   const[showModal,setshowModal]= useState(false);
   const [ordermodal,setOrdermodal] = useState(false);
-  const items = useSelector(state=>state.items);
-  const totalAmount = useSelector(state=>state.totalAmount);
+  const items = useSelector(state=>state.cart.items);
+  const totalAmount = useSelector(state=>state.cart.totalAmount);
+  const [orderId, setOrderId] = useState("")
   const dispatch = useDispatch();
  const handleModal =()=>{
     setshowModal(prevState=>!prevState);
@@ -19,27 +21,34 @@ export const  Cart =()=>{
     setOrdermodal(prevState=>!prevState);
     setshowModal(false);
     
-    dispatch({
-        type:'CLEAR_CART'
-    })
+  
   }
-  const dispatchEvent =(type,item)=>{
-    if(type === 1){
-        dispatch({
-            type:'ADD_ITEM',
-            payload:{item:item}
-        })
-    }
-    else if(type===-1){
-        dispatch({
-            type:'REMOVE_ITEM',
-            payload:{
-                id: item.id
+     
+    const orderHandler = () => {
+        // dispatch(clearCartHandler())
+        dispatch(placeOrderHandler(response => {
+            if(response.error) {
+                alert(response.data.error || "Some error occurred, please try again")
             }
-
-        })
+            else {
+                console.log(response.data)
+                setOrderId(response.data.name)
+                setshowModal(false)
+                setOrdermodal(previous => !previous)
+            }
+        }))
     }
-  }
+
+    const dispatchEvent = (type, item) => {
+        if(type === 1) {
+            dispatch(addItemHandler(item))
+        }
+        else if(type === -1) {
+            dispatch(removeItemHandler(item.id))
+        }
+    }
+
+
     return(
         <Fragment>
 
@@ -79,12 +88,12 @@ export const  Cart =()=>{
                                        totalAmount
                                         } INR</h4>
                                 </div>
-                                <button className="buttn" onClick={handleOrderModal}>Order Now</button>
+                                <button className="buttn" onClick={orderHandler}>Order Now</button>
                             </div>
                         }
                     </div>
                 </Modal>}
-                {ordermodal && <OrderSuccessModal onClose={handleOrderModal}/>}
+                { ordermodal && <OrderSuccessModal orderId={orderId} onClose={handleOrderModal}/> }
         </Fragment>
         
     )

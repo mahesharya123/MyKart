@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Doppio+One&family=Roboto:wght@300;400&display=swap');
 .header{
 
     display:flex;
@@ -6,6 +6,7 @@
     justify-content: space-between;
 }
 @import url("https://fonts.googleapis.com/css2?family=Doppio+One&display=swap");
+
 header {
   
   margin: 0;
@@ -125,3 +126,47 @@ body {
 .img-fluid {
   max-width: 100%;
   height: auto; }
+
+
+
+.login-btn {
+    background-color: #e96125;
+    padding: 12px 24px;
+    border: unset;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    margin-right: 12px;
+    align-self: center;
+}
+.logo{
+  height: 50px;
+  width: 55px;
+  border-radius: 50%;
+}
+
+
+.user-action{
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  button {
+    color: white;
+    background-color: unset;
+    border: unset;
+    margin: 0 10px;
+    cursor: pointer;
+}
+}
+.circle {
+  width: 60px;
+  height: 60px;
+  background-color: #e96125;
+  border-radius: 50%;
+  border: none;
+  color: aliceblue;
+  margin-top: 5px;
+ text-align: center;
+ font-size: .5rem;
+  
+}
