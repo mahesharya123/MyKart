@@ -32,9 +32,9 @@ export const AuthIndex =()=>{
         if(type==='signup'){
             setLoader(true);
            dispatch( SignupwithEmail_pass(details, data=>{
-            if(data.error){
-              console.log(data.error)
-              alert("some error may be occured")
+            if(data.error) {
+                console.log(data.response)
+                alert(data?.response?.data?.error?.message || "Some error occurred")
             }
             else{
               console.log("Successfully Signed up");
